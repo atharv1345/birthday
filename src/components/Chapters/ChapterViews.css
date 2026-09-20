@@ -1,0 +1,932 @@
+.chapter-view {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: auto;
+  min-height: min-content;
+  width: 100%;
+  position: relative;
+  isolation: isolate;
+}
+
+.chapter-header {
+  margin-bottom: 0.15rem;
+  flex-shrink: 0;
+}
+
+.story-p {
+  margin: 0 0 0.55rem;
+  font-size: clamp(0.88rem, 1.35vw, 1rem);
+  line-height: 1.55;
+  position: relative;
+  z-index: 1;
+}
+
+.story-p:last-child {
+  margin-bottom: 0;
+}
+
+.scrap-spread {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex: 0 0 auto;
+  min-height: min-content;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Full (mobile/tablet): clear split between left & right halves */
+.side-full .scrap-spread + .scrap-spread {
+  margin-top: 0.35rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed rgba(200, 107, 131, 0.35);
+}
+
+.page-section-label {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(138, 61, 84, 0.65);
+  margin: 0;
+}
+
+.align-end {
+  align-self: flex-end;
+}
+
+.wide-sticky {
+  width: 100%;
+  max-width: 100%;
+}
+
+.flow-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: stretch;
+  width: 100%;
+}
+
+.flow-sticky {
+  min-width: 0;
+  flex: 1 1 7rem;
+}
+
+.flow-sticky .sticky-body {
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 0.55rem 0.45rem;
+}
+
+.row-with-sprig {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.sprig-inline {
+  float: none;
+  margin: 0.25rem 0 0 auto;
+  display: block;
+}
+
+.persona-sticky {
+  min-width: 0;
+  width: 100%;
+}
+
+.persona-sticky .sticky-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.7rem 0.6rem 0.65rem;
+}
+
+.persona-sticky strong {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: #8a3d54;
+}
+
+.persona-sticky .persona-icon {
+  font-size: 0.95rem;
+}
+
+.clip-inline {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.25rem;
+}
+
+.banner-sticky {
+  align-self: center;
+}
+
+.lily-hero-wrap {
+  width: min(180px, 55%);
+  margin: 0.25rem auto;
+}
+
+.lily-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 8px 18px rgba(44, 28, 32, 0.18));
+}
+
+.deco-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.story-right-heading,
+.hand-emphasis {
+  font-family: var(--font-script);
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+  color: #8a3d54;
+  line-height: 1.25;
+  margin: 0.15rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.hand-emphasis.small {
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+}
+
+.story-side-note {
+  margin-top: 0.35rem;
+  max-width: min(22ch, 100%);
+  align-self: flex-start;
+  font-size: 1.02rem !important;
+}
+
+.story-h-timeline,
+.mini-timeline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.35rem;
+  align-items: center;
+  margin: 0.35rem 0;
+}
+
+.story-h-timeline {
+  padding: 0.45rem 0.35rem;
+  border-top: 1px solid rgba(200, 107, 131, 0.25);
+  border-bottom: 1px solid rgba(200, 107, 131, 0.18);
+}
+
+.timeline-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-hand);
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+  color: #7a4555;
+}
+
+.timeline-arrow {
+  opacity: 0.7;
+}
+
+.story-bottom-note {
+  margin-top: 0.25rem;
+  max-width: min(28ch, 100%);
+  font-size: clamp(1rem, 1.5vw, 1.2rem) !important;
+  color: #6b3a48;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.scrap-torn {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.scrap-torn.wide {
+  width: 100%;
+}
+
+.tape-inline {
+  position: absolute;
+  top: -6px;
+  left: 30%;
+  pointer-events: none;
+}
+
+.sticky-fan {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  align-items: stretch;
+  width: 100%;
+}
+
+.clipped-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  width: 100%;
+}
+
+.clipped-note .torn-paper,
+.clipped-note .sticky-note {
+  flex: 1;
+  min-width: 0;
+}
+
+.polaroid-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  margin: 0.35rem 0;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.polaroid-wrap.small {
+  max-width: 160px;
+}
+
+.polaroid-wrap .tape-top {
+  top: -6px;
+  left: 28%;
+  pointer-events: none;
+}
+
+.flow-step {
+  font-family: var(--font-hand);
+  font-size: 0.95rem;
+  padding: 0.3rem 0.55rem;
+  background: rgba(255, 214, 226, 0.55);
+  border-radius: 999px;
+  color: #6b3a48;
+}
+
+.flow-step:not(:last-child)::after {
+  content: '→';
+  margin-left: 0.35rem;
+  opacity: 0.6;
+}
+
+.heart-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0.25rem 0;
+  padding: 0;
+}
+
+.heart-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  font-family: var(--font-serif);
+  font-size: clamp(0.84rem, 1.2vw, 0.95rem);
+  color: var(--dark-text);
+  line-height: 1.4;
+}
+
+.closing-line,
+.emph-line {
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  color: #5c3340;
+}
+
+.closing-line {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.quote-block {
+  background: #e8eef3;
+  padding: 0.85rem 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.quote-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+  color: #4a3038;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.cards-grid,
+.persona-grid,
+.notes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+  width: 100%;
+}
+
+.persona-card {
+  text-align: left;
+  padding: 0.55rem 0.5rem;
+  border-radius: 8px;
+  background: rgba(255, 247, 234, 0.85);
+  border: 1px solid rgba(200, 107, 131, 0.22);
+  box-shadow: 0 3px 10px rgba(44, 28, 32, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  color: var(--dark-text);
+}
+
+.persona-icon {
+  font-size: 0.9rem;
+}
+
+.persona-card strong {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: #8a3d54;
+}
+
+.persona-card span:last-child {
+  font-family: var(--font-hand);
+  font-size: 0.92rem;
+  line-height: 1.25;
+}
+
+.persona-card:hover,
+.persona-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(44, 28, 32, 0.14);
+}
+
+.kitkat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+  max-width: 280px;
+}
+
+.kitkat-card strong {
+  color: #8b3a2a;
+}
+
+.timeline ol {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0.35rem 0;
+  border-left: 2px dashed rgba(233, 120, 153, 0.45);
+  padding-left: 0.85rem;
+}
+
+.timeline li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  opacity: 0;
+  animation: fade-up 0.5s ease forwards;
+}
+
+.tl-dot {
+  width: 10px;
+  height: 10px;
+  margin-top: 0.3rem;
+  margin-left: -1.15rem;
+  border-radius: 50%;
+  background: var(--rose);
+  box-shadow: 0 0 0 3px rgba(233, 120, 153, 0.2);
+  flex-shrink: 0;
+}
+
+.tl-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.tl-label {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: #8a3d54;
+}
+
+.tl-copy em {
+  font-family: var(--font-serif);
+  font-size: 0.86rem;
+  color: rgba(44, 28, 32, 0.7);
+}
+
+.chat-universe {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0.2rem 0;
+  width: 100%;
+}
+
+.chat-bubble {
+  max-width: 88%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 14px;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  animation: fade-up 0.45s ease both;
+  box-shadow: 0 3px 10px rgba(44, 28, 32, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.chat-bubble small {
+  font-size: 0.65rem;
+  opacity: 0.55;
+}
+
+.chat-bubble.left {
+  align-self: flex-start;
+  background: #fff7ea;
+  border-bottom-left-radius: 4px;
+}
+
+.chat-bubble.right {
+  align-self: flex-end;
+  background: #ffd6e2;
+  border-bottom-right-radius: 4px;
+}
+
+.lily-line {
+  max-width: 34ch;
+}
+
+.lily-interactive {
+  align-items: center;
+  text-align: center;
+}
+
+.lily-labels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.lily-tag {
+  font-family: var(--font-hand);
+  font-size: 1rem;
+  padding: 0.25rem 0.6rem;
+  border: 1px dashed rgba(200, 107, 131, 0.45);
+  border-radius: 999px;
+  color: #8a3d54;
+}
+
+.banner-note {
+  align-self: center;
+  padding: 0.35rem 0.9rem;
+  background: rgba(255, 182, 200, 0.45);
+  border-radius: 6px;
+  font-family: var(--font-serif);
+  color: #6b3a48;
+  box-shadow: 0 2px 8px rgba(44, 28, 32, 0.08);
+}
+
+.rose-strip {
+  background: #f4d5df !important;
+}
+
+.transition-chapter.aligned {
+  align-items: flex-start;
+  text-align: left;
+  min-height: 0;
+  padding: 0;
+}
+
+.big-you {
+  font-family: var(--font-script) !important;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem) !important;
+  color: #8a3d54 !important;
+}
+
+.soft-isnt {
+  color: #e97899;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.ch03-right,
+.ch04-right {
+  align-items: center;
+}
+
+.fresher-list {
+  align-self: stretch;
+  width: 100%;
+}
+
+.letter-col {
+  gap: 0.65rem;
+}
+
+/* —— Chapter 05: Things I Notice (new scrap layout) —— */
+.ch05-stickies {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem 0.65rem;
+  width: 100%;
+}
+
+.ch05-sticky-0 {
+  grid-column: 1;
+}
+
+.ch05-sticky-1 {
+  grid-column: 2;
+  align-self: start;
+}
+
+.ch05-sticky-2 {
+  grid-column: 1;
+}
+
+.ch05-scribble {
+  font-family: var(--font-hand);
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  color: #8a3d54;
+  margin: 0.25rem 0 0;
+  align-self: flex-end;
+  text-align: right;
+  max-width: 22ch;
+}
+
+.ch05-scribble.small {
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  align-self: flex-start;
+  text-align: left;
+  max-width: none;
+}
+
+.ch05-banner {
+  width: 100%;
+  margin: 0;
+  padding: 0.45rem 0.75rem;
+  background: rgba(255, 182, 200, 0.55);
+  border-radius: 4px;
+  font-family: var(--font-hand);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: #6b3a48;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(44, 28, 32, 0.08);
+}
+
+.ch05-banner.long {
+  font-size: clamp(0.95rem, 1.35vw, 1.08rem);
+  line-height: 1.35;
+}
+
+.ch05-corner-note {
+  align-self: flex-end;
+  max-width: 18ch;
+}
+
+.ch05-right {
+  gap: 0.65rem;
+}
+
+.chat-polaroid-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 230px;
+  margin: 0.35rem auto 0.15rem;
+  flex-shrink: 0;
+}
+
+.chat-fit-polaroid {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  background: #fffaf2;
+  padding: 0.45rem 0.45rem 0.7rem;
+  box-shadow:
+    0 12px 28px rgba(44, 28, 32, 0.22),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  transform: rotate(-2deg);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.chat-fit-polaroid figcaption {
+  margin-top: 0.4rem;
+  font-family: var(--font-hand);
+  font-size: clamp(0.88rem, 1.4vw, 1rem);
+  color: #5a3a42;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.chat-fit-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  padding: 0.45rem 0.4rem;
+  background: #0b141a;
+  border-radius: 3px;
+  min-height: 0;
+}
+
+.chat-fit-bubble {
+  max-width: 92%;
+  padding: 0.28rem 0.42rem 0.18rem;
+  border-radius: 7px;
+  font-family: var(--font-ui);
+  font-size: clamp(0.58rem, 1.5vw, 0.68rem);
+  line-height: 1.35;
+  display: flex;
+  flex-direction: column;
+  gap: 0.06rem;
+  color: #e9edef;
+}
+
+.chat-fit-bubble small {
+  font-size: 0.48rem;
+  opacity: 0.55;
+  align-self: flex-end;
+}
+
+.chat-fit-bubble.left {
+  align-self: flex-start;
+  background: #202c33;
+  border-bottom-left-radius: 2px;
+}
+
+.chat-fit-bubble.right {
+  align-self: flex-end;
+  background: #005c4b;
+  border-bottom-right-radius: 2px;
+}
+
+.chat-fit-text {
+  word-break: break-word;
+}
+
+.ch05-footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.ch05-grateful {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  font-family: var(--font-hand);
+  font-size: 0.95rem;
+  color: #8a3d54;
+}
+
+.ch06-fill {
+  color: #5c3340;
+}
+
+.ch06-years {
+  width: 100%;
+  max-width: 100%;
+}
+
+.ch06-years-card {
+  flex: 1;
+  min-width: 0;
+  background: rgba(255, 247, 234, 0.92);
+  padding: 0.7rem 0.85rem 0.75rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(44, 28, 32, 0.1);
+  border: 1px solid rgba(200, 107, 131, 0.18);
+}
+
+.ch06-years-card .hand-emphasis {
+  margin: 0 0 0.35rem;
+}
+
+.ch06-years-card .heart-list {
+  margin: 0;
+  gap: 0.28rem;
+}
+
+.ch06-years-card .heart-list li {
+  font-size: clamp(0.86rem, 1.2vw, 0.95rem);
+}
+
+.ch06-closing {
+  font-family: var(--font-hand);
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  color: #8a3d54;
+  line-height: 1.4;
+  margin: 0.25rem 0 0;
+  max-width: 34ch;
+}
+
+/* Chapter 10 — photo inside sticky */
+.photo-sticky {
+  width: min(200px, 100%);
+  max-width: 100%;
+  align-self: center;
+}
+
+.photo-sticky .sticky-body {
+  padding: 0.45rem 0.45rem 0.55rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.photo-sticky-img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+  border-radius: 2px;
+}
+
+.photo-sticky-caption {
+  font-family: var(--font-hand);
+  font-size: 0.95rem;
+  text-align: center;
+  color: #6b3a48;
+  line-height: 1.3;
+}
+
+.ch10-wish,
+.ch10-closing {
+  font-family: var(--font-hand);
+  color: #8a3d54;
+  line-height: 1.4;
+  margin: 0.2rem 0 0;
+}
+
+.ch10-wish {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+}
+
+.ch10-closing {
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+}
+
+/* —— Narrow screens: plain stacked flow, no visual collisions —— */
+@media (max-width: 1023px) {
+  .chapter-view {
+    gap: 0.85rem;
+  }
+
+  .scrap-spread {
+    gap: 0.8rem;
+  }
+
+  .story-p {
+    font-size: clamp(0.9rem, 3.6vw, 1rem);
+    line-height: 1.6;
+    margin-bottom: 0.65rem;
+  }
+
+  .story-side-note,
+  .story-bottom-note {
+    align-self: stretch;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .cards-grid,
+  .persona-grid,
+  .notes-grid {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .polaroid-wrap,
+  .polaroid-wrap.small {
+    max-width: min(200px, 70%);
+    margin-inline: auto;
+  }
+
+  .row-with-sprig {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sticky-fan {
+    gap: 0.65rem;
+  }
+
+  .flow-steps {
+    flex-direction: column;
+  }
+
+  .flow-sticky {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .kitkat-card {
+    max-width: 100%;
+  }
+
+  .lily-line {
+    max-width: none;
+  }
+
+  .chat-bubble {
+    max-width: 92%;
+  }
+
+  /* Kill decorative rotation spill on small screens */
+  .ch05-stickies {
+    grid-template-columns: 1fr;
+  }
+
+  .ch05-sticky-0,
+  .ch05-sticky-1,
+  .ch05-sticky-2 {
+    grid-column: 1;
+  }
+
+  .ch05-scribble {
+    align-self: stretch;
+    text-align: left;
+    max-width: none;
+  }
+
+  .ch05-corner-note {
+    align-self: stretch;
+    max-width: 100%;
+  }
+
+  .chat-polaroid-wrap {
+    max-width: min(260px, 88%);
+    margin-inline: auto;
+  }
+
+  .chat-fit-polaroid {
+    transform: none !important;
+  }
+
+  .chat-fit-bubble {
+    font-size: clamp(0.62rem, 2.8vw, 0.72rem);
+  }
+
+  .photo-sticky {
+    width: min(220px, 85%);
+  }
+
+  .ch06-years-card {
+    width: 100%;
+  }
+
+  .ch06-closing {
+    max-width: none;
+  }
+
+  .ch05-footer-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .side-full .sticky-note,
+  .side-full .polaroid {
+    transform: none !important;
+  }
+
+  .side-full .story-bottom-note {
+    transform: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .chapter-heading {
+    font-size: clamp(1.55rem, 7vw, 2rem);
+  }
+
+  .chapter-sub {
+    font-size: 0.9rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .hand-emphasis {
+    font-size: clamp(1.1rem, 5vw, 1.35rem);
+  }
+}

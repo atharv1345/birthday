@@ -1,0 +1,84 @@
+.top-header {
+  display: grid;
+  grid-template-columns: clamp(44px, 6vw, 72px) 1fr minmax(160px, 280px);
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem clamp(0.9rem, 3vw, 2rem);
+  width: 100%;
+  z-index: 4;
+}
+
+.menu-button {
+  width: clamp(38px, 4vw, 46px);
+  height: clamp(38px, 4vw, 46px);
+  border-radius: 50%;
+  border: 2px solid #ff9db0;
+  background: rgba(255, 150, 170, 0.08);
+  color: #ffdce2;
+  display: grid;
+  place-items: center;
+  transition: 0.3s ease;
+  flex-shrink: 0;
+}
+
+.menu-button:hover {
+  background: rgba(255, 150, 170, 0.18);
+  transform: scale(1.06);
+  box-shadow: 0 0 22px rgba(255, 120, 150, 0.28);
+}
+
+.menu-button.is-active {
+  background: rgba(255, 150, 170, 0.22);
+  box-shadow: 0 0 18px rgba(255, 120, 150, 0.25);
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 16px;
+}
+
+.menu-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background: #ffd0da;
+  transition: transform 0.3s ease, opacity 0.25s ease;
+}
+
+.menu-button.is-active .menu-icon span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-button.is-active .menu-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-button.is-active .menu-icon span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.page-heading {
+  text-align: center;
+  min-width: 0;
+}
+
+.page-heading h1 {
+  margin: 0;
+  font-family: var(--font-script);
+  font-size: clamp(1.5rem, 3.8vw, 2.6rem);
+  font-weight: 400;
+  color: #ff9db0;
+  text-shadow: 0 0 14px rgba(255, 130, 155, 0.35);
+}
+
+.page-heading p {
+  margin-top: 0.15rem;
+  font-size: clamp(0.7rem, 1.1vw, 0.9rem);
+  color: #f1dce0;
+  font-family: var(--font-serif);
+  font-style: italic;
+}

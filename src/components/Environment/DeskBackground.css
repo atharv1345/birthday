@@ -1,0 +1,215 @@
+.desk-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.desk-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(120, 55, 65, 0.4), transparent 38%),
+    radial-gradient(circle at 12% 70%, rgba(90, 35, 45, 0.3), transparent 32%),
+    radial-gradient(circle at 88% 40%, rgba(233, 120, 153, 0.14), transparent 28%),
+    linear-gradient(145deg, #0e070a 0%, #241018 48%, #3a1b28 100%);
+  transition: filter 0.8s ease, background 0.8s ease;
+}
+
+.desk-bg.brighter .desk-gradient {
+  filter: brightness(1.18) saturate(1.15);
+  background:
+    radial-gradient(circle at 50% 20%, rgba(242, 154, 178, 0.3), transparent 40%),
+    radial-gradient(circle at 20% 65%, rgba(233, 120, 153, 0.22), transparent 35%),
+    linear-gradient(145deg, #1a0c12 0%, #3a1b28 50%, #4a2232 100%);
+}
+
+.desk-bokeh {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 30%, rgba(255, 182, 200, 0.12) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 22%, rgba(255, 214, 180, 0.1) 0 3px, transparent 4px),
+    radial-gradient(circle at 40% 60%, rgba(255, 182, 200, 0.08) 0 2px, transparent 3px),
+    radial-gradient(circle at 85% 55%, rgba(255, 200, 150, 0.1) 0 2px, transparent 3px);
+  background-size: 100% 100%;
+  opacity: 0.9;
+}
+
+.desk-wood {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 32%;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(62, 36, 28, 0.6) 0px,
+      rgba(88, 52, 40, 0.55) 10px,
+      rgba(52, 30, 24, 0.6) 20px
+    ),
+    linear-gradient(180deg, transparent, rgba(18, 8, 10, 0.9));
+  mask-image: linear-gradient(180deg, transparent, #000 40%);
+}
+
+.desk-candle-wrap {
+  position: absolute;
+  right: 7%;
+  bottom: 18%;
+  width: 90px;
+  height: 160px;
+}
+
+.desk-candle-glass {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 70px;
+  border-radius: 8px 8px 12px 12px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 220, 180, 0.08) 40%,
+    rgba(255, 180, 120, 0.1)
+  );
+  border: 1px solid rgba(255, 220, 180, 0.25);
+  box-shadow:
+    inset 0 0 12px rgba(255, 200, 140, 0.15),
+    0 8px 24px rgba(0, 0, 0, 0.35);
+  display: grid;
+  place-items: end center;
+  padding-bottom: 8px;
+}
+
+.desk-candle {
+  width: 14px;
+  height: 36px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #fff2d8, #e8c48a);
+  position: relative;
+  box-shadow: 0 0 16px rgba(255, 180, 120, 0.35);
+}
+
+.desk-candle::after {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  width: 12px;
+  height: 18px;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 40% 40%;
+  background: radial-gradient(circle, #ffe7a0, #ff9a4a 65%, transparent);
+  animation: candle-flicker 2.4s ease-in-out infinite;
+}
+
+.desk-candle-glow {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  width: 200px;
+  height: 200px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 180, 120, 0.28), transparent 70%);
+  filter: blur(10px);
+  animation: candle-flicker 3s ease-in-out infinite;
+}
+
+.desk-lily-img {
+  position: absolute;
+  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.35));
+  user-select: none;
+}
+
+.desk-lily-left {
+  left: 1%;
+  bottom: 10%;
+  width: clamp(120px, 18vw, 220px) !important;
+  opacity: 0.95;
+  transform: rotate(-8deg);
+}
+
+.desk-lily-back {
+  right: 16%;
+  top: 6%;
+  width: clamp(90px, 12vw, 160px) !important;
+  opacity: 0.4;
+  transform: rotate(12deg) scaleX(-1);
+}
+
+.desk-kitkat {
+  position: absolute;
+  left: 14%;
+  bottom: 10%;
+  display: flex;
+  gap: 3px;
+  transform: rotate(-18deg);
+  opacity: 0.85;
+}
+
+.desk-kitkat span {
+  width: 14px;
+  height: 40px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #6b2d1a, #3d160c);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+.desk-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 38%, rgba(6, 2, 4, 0.78) 100%);
+}
+
+.particles,
+.petals {
+  position: absolute;
+  inset: 0;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 214, 224, 0.75);
+  animation: drift-particle 5s ease-in-out infinite;
+}
+
+.petal {
+  position: absolute;
+  width: 12px;
+  height: 18px;
+  border-radius: 60% 60% 40% 40%;
+  background: linear-gradient(160deg, #ffb6c8, #e97899);
+  opacity: 0.55;
+  animation: float-petal linear infinite;
+}
+
+.desk-bg.brighter .desk-lily-left {
+  opacity: 1;
+  filter: drop-shadow(0 0 22px rgba(242, 154, 178, 0.4));
+}
+
+@media (max-width: 767px) {
+  .desk-lily-back,
+  .desk-kitkat {
+    display: none;
+  }
+
+  .desk-lily-left {
+    width: 90px;
+    opacity: 0.7;
+  }
+
+  .desk-candle-wrap {
+    right: 4%;
+    transform: scale(0.75);
+    transform-origin: bottom right;
+  }
+}

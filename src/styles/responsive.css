@@ -1,0 +1,140 @@
+/* Overlay layout sizing — drawer styles live in ChapterSidebar.css */
+
+@media (max-width: 1023px) {
+  :root {
+    --book-h: 100%;
+    --book-w: 100%;
+    --header-h: 64px;
+    --nav-h: auto;
+  }
+
+  .top-header {
+    grid-template-columns: 44px 1fr minmax(44px, 200px) !important;
+    gap: 0.5rem !important;
+  }
+
+  .book-stage {
+    padding: 0.35rem 0.65rem 0.4rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --header-h: 58px;
+  }
+
+  .top-header {
+    padding-inline: 0.65rem !important;
+    grid-template-columns: 40px 1fr 44px !important;
+  }
+
+  .top-header .page-heading h1 {
+    font-size: clamp(1.1rem, 5vw, 1.45rem) !important;
+  }
+
+  .top-header .page-heading p {
+    display: none;
+  }
+
+  .music-player {
+    width: 40px !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+  }
+
+  .music-player .music-text,
+  .music-player .music-wave,
+  .music-player .music-extra {
+    display: none !important;
+  }
+
+  .bottom-chrome {
+    grid-template-columns: 1fr !important;
+    justify-items: center;
+    text-align: center;
+    gap: 0.45rem !important;
+    padding: 0.35rem 0.65rem 0.75rem !important;
+  }
+
+  .bottom-quote,
+  .date-chip span {
+    display: none !important;
+  }
+
+  .bottom-aside {
+    justify-content: center !important;
+    gap: 0.45rem !important;
+  }
+
+  .bottom-nav {
+    gap: 0.4rem !important;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .bottom-nav .page-dots {
+    display: none;
+  }
+
+  .nav-pill {
+    min-width: 0 !important;
+    padding: 0.55rem 0.7rem !important;
+    font-size: 0.75rem !important;
+    flex: 1;
+  }
+
+  .page-indicator {
+    min-width: 3.5rem !important;
+  }
+
+  .fullscreen-btn {
+    min-width: 0 !important;
+    padding-inline: 0.75rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  .date-chip {
+    padding: 0.35rem 0.55rem !important;
+  }
+
+  .date-chip strong {
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-heading h1 {
+    letter-spacing: -0.01em;
+  }
+
+  .nav-pill {
+    font-size: 0.7rem !important;
+    padding: 0.5rem 0.45rem !important;
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  :root {
+    --header-h: 48px;
+  }
+
+  .book-stage {
+    padding-block: 0.2rem !important;
+  }
+}
+
+/* Page content must stay inside the paper */
+@media (max-width: 1023px) {
+  .book-page,
+  .page-inner {
+    overflow-x: hidden;
+  }
+
+  .page-lily-slot {
+    max-width: 28%;
+    max-height: 28%;
+    opacity: 0.55;
+  }
+}

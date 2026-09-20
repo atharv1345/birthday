@@ -1,0 +1,156 @@
+.birthday-finale {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 0.25rem;
+  overflow: visible;
+  height: auto;
+  min-height: min-content;
+  width: 100%;
+}
+
+.finale-kicker {
+  font-family: var(--font-serif);
+  font-style: italic;
+  letter-spacing: 0.14em;
+  color: #8a3d54;
+  font-size: 0.9rem;
+}
+
+.finale-title {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  font-size: clamp(1.05rem, 2.3vw, 1.35rem);
+  color: #6b2f40;
+  margin: 0.2rem 0;
+}
+
+.finale-name {
+  font-family: var(--font-script);
+  font-size: clamp(1.8rem, 3.6vw, 2.5rem);
+  color: #c86b83;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.finale-message {
+  max-width: 34ch;
+}
+
+.finale-message p {
+  margin-bottom: 0.4rem;
+  font-size: clamp(0.88rem, 1.25vw, 1rem);
+}
+
+.finale-sticky {
+  margin-top: 0.5rem;
+  max-width: 24ch;
+}
+
+.finale-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.finale-wishes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.finale-wishes li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  font-family: var(--font-serif);
+  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+  color: var(--dark-text);
+}
+
+.wish-heart {
+  color: #e97899;
+}
+
+.finale-closing {
+  font-family: var(--font-script);
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  color: #8a3d54;
+}
+
+.finale-right-note {
+  max-width: 26ch;
+  align-self: flex-end;
+}
+
+.kitkat-trigger {
+  margin-top: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  border: 1px dashed rgba(139, 69, 42, 0.45);
+  background: rgba(255, 247, 234, 0.7);
+  color: #5c3317;
+  font-family: var(--font-hand);
+  font-size: 1.05rem;
+  transition: transform 0.25s ease;
+  align-self: flex-start;
+}
+
+.kitkat-trigger:hover {
+  transform: scale(1.05);
+}
+
+.kitkat-bar {
+  width: 28px;
+  height: 12px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #6b2d1a, #3d160c);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.kitkat-bar::before {
+  content: '';
+  position: absolute;
+  inset: 2px 3px;
+  background: repeating-linear-gradient(90deg, #8b4513 0 5px, #5c2a12 5px 7px);
+  opacity: 0.7;
+}
+
+.confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.confetti span {
+  position: absolute;
+  top: -8%;
+  width: 6px;
+  height: 10px;
+  border-radius: 2px;
+  background: #f29ab2;
+  animation: confetti-fall 5s linear infinite;
+  opacity: 0.7;
+}
+
+.confetti span:nth-child(3n) {
+  background: #e97899;
+}
+
+.confetti span:nth-child(4n) {
+  background: #ffd6a5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .confetti span {
+    animation: none;
+    opacity: 0;
+  }
+}

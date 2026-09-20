@@ -1,0 +1,33 @@
+:root {
+  --bg-primary: #12090d;
+  --bg-secondary: #241018;
+  --wine: #3a1b28;
+  --pink: #f29ab2;
+  --soft-pink: #ffb6c8;
+  --rose: #e97899;
+  --paper: #f5e9d6;
+  --old-paper: #ead8be;
+  --white: #fff7ea;
+  --dark-text: #2c1c20;
+  --accent: #c86b83;
+
+  --glow-pink: rgba(242, 154, 178, 0.35);
+  --glow-candle: rgba(255, 180, 120, 0.2);
+  --glass: rgba(36, 16, 24, 0.72);
+  --glass-border: rgba(255, 160, 180, 0.25);
+
+  --font-script: 'Great Vibes', cursive;
+  --font-hand: 'Caveat', cursive;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-ui: 'Outfit', system-ui, sans-serif;
+
+  --book-w: min(1180px, 94vw);
+  --book-h: min(720px, 74vh);
+  --sidebar-w: clamp(210px, 18vw, 280px);
+  --header-h: 72px;
+  --nav-h: 64px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --transition: 0.35s ease;
+  --page-turn: 0.85s cubic-bezier(0.4, 0.05, 0.2, 1);
+}

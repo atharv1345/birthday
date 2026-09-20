@@ -1,0 +1,154 @@
+.bottom-chrome {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem 1rem;
+  padding: 0.35rem 1.1rem 0.9rem;
+  z-index: 4;
+  flex-shrink: 0;
+  position: relative;
+  background: linear-gradient(180deg, transparent, rgba(18, 9, 13, 0.55) 35%);
+}
+
+.bottom-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+  color: rgba(255, 214, 224, 0.72);
+  line-height: 1.4;
+  max-width: 28ch;
+}
+
+.bottom-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.nav-pill {
+  min-width: 132px;
+}
+
+.page-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 88px;
+  font-variant-numeric: tabular-nums;
+  color: #f5dfe3;
+}
+
+.page-count {
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+.page-dots {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 180px;
+}
+
+.page-dots .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 182, 200, 0.28);
+  padding: 0;
+  transition: 0.2s ease;
+}
+
+.page-dots .dot.active {
+  background: var(--soft-pink);
+  box-shadow: 0 0 8px var(--glow-pink);
+  transform: scale(1.2);
+}
+
+.bottom-aside {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.date-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.1rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 160, 180, 0.22);
+  background: rgba(100, 35, 50, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+.date-chip strong {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  color: var(--soft-pink);
+}
+
+.date-chip span {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.7rem;
+  color: rgba(241, 220, 224, 0.75);
+  max-width: 16ch;
+  text-align: right;
+  line-height: 1.25;
+}
+
+.fullscreen-btn {
+  min-width: 96px;
+}
+
+@media (max-width: 1023px) {
+  .bottom-chrome {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .bottom-quote {
+    max-width: 40ch;
+    order: 2;
+  }
+
+  .bottom-nav {
+    order: 1;
+  }
+
+  .bottom-aside {
+    order: 3;
+    justify-content: center;
+  }
+
+  .date-chip {
+    align-items: center;
+  }
+
+  .date-chip span {
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .bottom-quote,
+  .date-chip span {
+    display: none;
+  }
+
+  .nav-pill {
+    min-width: 0;
+    padding-inline: 0.85rem;
+    font-size: 0.8rem;
+  }
+}
